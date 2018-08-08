@@ -1,0 +1,49 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MapBox - Directions",
+		"_postman_id": "a3676429-6529-2f69-4128-535269f80dae",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieve directions",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/directions/v5/mapbox/cycling/-122.42,37.78;-77.03,38.91?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"directions",
+						"v5",
+						"mapbox",
+						"cycling",
+						"-122.42,37.78;-77.03,38.91"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

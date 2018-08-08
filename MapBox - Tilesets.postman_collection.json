@@ -1,0 +1,47 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MapBox - Tilesets",
+		"_postman_id": "0596fcc6-daa7-2d4c-a9ea-cb8f62a08c66",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List tilesets",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/tilesets/v1/umeralikhan?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tilesets",
+						"v1",
+						"umeralikhan"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

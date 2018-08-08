@@ -1,0 +1,288 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MapBox - Tokens",
+		"_postman_id": "67d2e367-2500-75a3-6922-7c3b01a28832",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List tokens",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/tokens/v2/umeralikhan?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tokens",
+						"v2",
+						"umeralikhan"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"mapbox_token_created_id\",jsonData.id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/tokens/v2/umeralikhan?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tokens",
+						"v2",
+						"umeralikhan"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"scopes\": [\"styles:read\", \"fonts:read\"],\n  \"note\": \"My top secret project\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create token - temporary",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"mapbox_temp_token_created_id\",jsonData.id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/tokens/v2/umeralikhan?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tokens",
+						"v2",
+						"umeralikhan"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"expires\": \"2018-09-15T19:27:53.000Z\",\n  \"scopes\": [\"styles:read\", \"fonts:read\"]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Token",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/tokens/v2/umeralikhan/{{mapbox_token_created_id}}?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tokens",
+						"v2",
+						"umeralikhan",
+						"{{mapbox_token_created_id}}"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"scopes\": [\"styles:tiles\", \"styles:read\", \"fonts:read\"]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a token",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/tokens/v2?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tokens",
+						"v2"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"scopes\": [\"styles:tiles\", \"styles:read\", \"fonts:read\"]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List scopes",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/scopes/v1/umeralikhan?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"scopes",
+						"v1",
+						"umeralikhan"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"scopes\": [\"styles:tiles\", \"styles:read\", \"fonts:read\"]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Token",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/tokens/v2/umeralikhan/{{mapbox_token_created_id}}?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tokens",
+						"v2",
+						"umeralikhan",
+						"{{mapbox_token_created_id}}"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"scopes\": [\"styles:tiles\", \"styles:read\", \"fonts:read\"]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

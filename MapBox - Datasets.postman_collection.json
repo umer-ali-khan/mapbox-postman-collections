@@ -1,0 +1,429 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MapBox - Datasets",
+		"_postman_id": "7d8c309c-7df4-90f7-5080-4926b397bfd5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create dataset",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"mapbox_dataset__name\",jsonData.name);",
+							"postman.setGlobalVariable(\"mapbox_dataset___id\",jsonData.id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/datasets/v1/umeralikhan?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"datasets",
+						"v1",
+						"umeralikhan"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____5555\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "List datasets",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/datasets/v1/umeralikhan?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"datasets",
+						"v1",
+						"umeralikhan"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a dataset",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/datasets/v1/umeralikhan/{{mapbox_dataset___id}}?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"datasets",
+						"v1",
+						"umeralikhan",
+						"{{mapbox_dataset___id}}"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update a dataset - (Error - size is always ero)",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/datasets/v1/umeralikhan/{{mapbox_dataset___id}}?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"datasets",
+						"v1",
+						"umeralikhan",
+						"{{mapbox_dataset___id}}"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List features",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/datasets/v1/umeralikhan/cjkk6uglp04vm2qp58tnp98ec/features?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"datasets",
+						"v1",
+						"umeralikhan",
+						"cjkk6uglp04vm2qp58tnp98ec",
+						"features"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Insert or update a feature",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/datasets/v1/umeralikhan/cjkk6uglp04vm2qp58tnp98ec/features/06101fec39f65e5c9fd80007e2cf7f46?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"datasets",
+						"v1",
+						"umeralikhan",
+						"cjkk6uglp04vm2qp58tnp98ec",
+						"features",
+						"06101fec39f65e5c9fd80007e2cf7f46"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n  \"id\": \"06101fec39f65e5c9fd80007e2cf7f46\",\n  \"type\": \"Feature\",\n  \"geometry\": {\n    \"type\": \"Polygon\",\n    \"coordinates\": [\n      [\n        [ 100, 0 ],\n        [ 101, 0 ],\n        [ 101, 1 ],\n        [ 100, 1 ],\n        [ 100, 0 ]\n      ]\n    ]\n  },\n  \"properties\": {\n    \"prop0\": \"value0\"\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a feature",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/datasets/v1/umeralikhan/cjkk6uglp04vm2qp58tnp98ec/features/06101fec39f65e5c9fd80007e2cf7f46?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"datasets",
+						"v1",
+						"umeralikhan",
+						"cjkk6uglp04vm2qp58tnp98ec",
+						"features",
+						"06101fec39f65e5c9fd80007e2cf7f46"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a feature",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/datasets/v1/umeralikhan/cjkk6uglp04vm2qp58tnp98ec/features/06101fec39f65e5c9fd80007e2cf7f46?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"datasets",
+						"v1",
+						"umeralikhan",
+						"cjkk6uglp04vm2qp58tnp98ec",
+						"features",
+						"06101fec39f65e5c9fd80007e2cf7f46"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a dataset",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"mapbox_dataset__name\",jsonData.name);",
+							"postman.setGlobalVariable(\"mapbox_dataset___id\",jsonData.name);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/datasets/v1/umeralikhan/{{mapbox_dataset___id}}?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"datasets",
+						"v1",
+						"umeralikhan",
+						"{{mapbox_dataset___id}}"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

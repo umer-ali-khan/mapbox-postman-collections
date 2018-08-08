@@ -1,0 +1,121 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MapBox - Static",
+		"_postman_id": "5fb2ff32-024b-5053-02c9-504d6fe19349",
+		"description": "The Mapbox Static API returns static maps and raster tiles from styles in the Mapbox Style Specification. See the Static (Classic) API documentation.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieve a static map from a style",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/styles/v1/umeralikhan/cjkjys5uq0sf62smvfmgavc9k/static/-122.4241,37.78,14.25,0,60/600x600?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"styles",
+						"v1",
+						"umeralikhan",
+						"cjkjys5uq0sf62smvfmgavc9k",
+						"static",
+						"-122.4241,37.78,14.25,0,60",
+						"600x600"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve raster tiles from styles",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/styles/v1/umeralikhan/cjkjys5uq0sf62smvfmgavc9k/tiles/1/1/0?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"styles",
+						"v1",
+						"umeralikhan",
+						"cjkjys5uq0sf62smvfmgavc9k",
+						"tiles",
+						"1",
+						"1",
+						"0"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a map's WMTS document",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/styles/v1/umeralikhan/cjkjys5uq0sf62smvfmgavc9k/wmts?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"styles",
+						"v1",
+						"umeralikhan",
+						"cjkjys5uq0sf62smvfmgavc9k",
+						"wmts"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		}
+	]
+}

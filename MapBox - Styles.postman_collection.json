@@ -1,0 +1,426 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MapBox - Styles",
+		"_postman_id": "05172a2f-3e3e-644b-e9e9-c6d71c662b12",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Style",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"style_id_to_delete\",jsonData.id);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"postman.setGlobalVariable(\"variable_key\", \"variable_value\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/styles/v1/umeralikhan?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"styles",
+						"v1",
+						"umeralikhan"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"version\": 8,\n  \"name\": \"My Awesome Style\",\n  \"metadata\": { },\n  \"sources\": {\n    \"myvectorsource\": {\n      \"url\": \"mapbox://styles/mapbox/streets-v10\",\n      \"type\": \"vector\"\n    },\n    \"myrastersource\": {\n      \"url\": \"mapbox://mapbox.streets\",\n      \"type\": \"raster\"\n    }\n  },\n  \"glyphs\": \"mapbox://fonts/mapbox/{fontstack}/{range}.pbf\",\n  \"layers\": [ ]\n}"
+				},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "List Styles",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/styles/v1/umeralikhan/?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"styles",
+						"v1",
+						"umeralikhan",
+						""
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a Style",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/styles/v1/umeralikhan/cjkjys5uq0sf62smvfmgavc9k?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"styles",
+						"v1",
+						"umeralikhan",
+						"cjkjys5uq0sf62smvfmgavc9k"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Style",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/styles/v1/umeralikhan/cjkjz6rxx02tw2smvbnyzbf24?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"styles",
+						"v1",
+						"umeralikhan",
+						"cjkjz6rxx02tw2smvbnyzbf24"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"version\": 8,\n    \"name\": \"My Awesome Style\",\n    \"metadata\": {},\n    \"sources\": {\n        \"myvectorsource\": {\n            \"url\": \"mapbox://styles/mapbox/streets-v10\",\n            \"type\": \"vector\"\n        },\n        \"myrastersource\": {\n            \"url\": \"mapbox://mapbox.streets\",\n            \"type\": \"raster\"\n        }\n    },\n    \"sprite\": \"mapbox://sprites/umeralikhan/cjkjz6rxx02tw2smvbnyzbf24\",\n    \"glyphs\": \"mapbox://fonts/mapbox/{fontstack}/{range}.pbf\",\n    \"layers\": [],\n  \n    \"id\": \"cjkjz6rxx02tw2smvbnyzbf24\",\n\n    \"owner\": \"umeralikhan\",\n    \"visibility\": \"private\",\n    \"draft\": false\n}"
+				},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Style",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/styles/v1/umeralikhan/{{style_id_to_delete}}?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"styles",
+						"v1",
+						"umeralikhan",
+						"{{style_id_to_delete}}"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"version\": 8,\n    \"name\": \"My Awesome Style\",\n    \"metadata\": {},\n    \"sources\": {\n        \"myvectorsource\": {\n            \"url\": \"mapbox://styles/mapbox/streets-v10\",\n            \"type\": \"vector\"\n        },\n        \"myrastersource\": {\n            \"url\": \"mapbox://mapbox.streets\",\n            \"type\": \"raster\"\n        }\n    },\n    \"sprite\": \"mapbox://sprites/umeralikhan/cjkjz6rxx02tw2smvbnyzbf24\",\n    \"glyphs\": \"mapbox://fonts/mapbox/{fontstack}/{range}.pbf\",\n    \"layers\": [],\n  \n    \"id\": \"cjkjz6rxx02tw2smvbnyzbf24\",\n\n    \"owner\": \"umeralikhan\",\n    \"visibility\": \"private\",\n    \"draft\": false\n}"
+				},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a sprite image (PNG)",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/styles/v1/umeralikhan/cjkjys5uq0sf62smvfmgavc9k/sprite.png?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"styles",
+						"v1",
+						"umeralikhan",
+						"cjkjys5uq0sf62smvfmgavc9k",
+						"sprite.png"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a sprite image (JSON)",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/styles/v1/umeralikhan/cjkjys5uq0sf62smvfmgavc9k/sprite@2x?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"styles",
+						"v1",
+						"umeralikhan",
+						"cjkjys5uq0sf62smvfmgavc9k",
+						"sprite@2x"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Add new image to sprite",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/styles/v1/umeralikhan/cjkjys5uq0sf62smvfmgavc9k/sprite/bicycle-254.svg?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"styles",
+						"v1",
+						"umeralikhan",
+						"cjkjys5uq0sf62smvfmgavc9k",
+						"sprite",
+						"bicycle-254.svg"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": ""
+					}
+				},
+				"description": "@stamtesteng To send files with requests while running a collection, you'll need to use Newman - http://blog.getpostman.com/2014/11/15/using-newman-to-run-collections-with-file-post-requests/. Supporting file uploads through Postman's runner isn't on our immediate roadmap."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete image from sprite",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/styles/v1/umeralikhan/cjkjys5uq0sf62smvfmgavc9k/sprite/bicycle-254.svg?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"styles",
+						"v1",
+						"umeralikhan",
+						"cjkjys5uq0sf62smvfmgavc9k",
+						"sprite",
+						"bicycle-254.svg"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": ""
+					}
+				},
+				"description": "@stamtesteng To send files with requests while running a collection, you'll need to use Newman - http://blog.getpostman.com/2014/11/15/using-newman-to-run-collections-with-file-post-requests/. Supporting file uploads through Postman's runner isn't on our immediate roadmap."
+			},
+			"response": []
+		},
+		{
+			"name": "Embed a style",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/styles/v1/umeralikhan/cjkjys5uq0sf62smvfmgavc9k.html?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"styles",
+						"v1",
+						"umeralikhan",
+						"cjkjys5uq0sf62smvfmgavc9k.html"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		}
+	]
+}

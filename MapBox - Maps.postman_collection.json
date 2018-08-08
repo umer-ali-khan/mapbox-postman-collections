@@ -1,0 +1,177 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MapBox - Maps",
+		"_postman_id": "0bc1aafd-ea52-126b-fb79-7282fc36ad1a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieve Tiles - MapBox Street - 2x png",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token={{mapbox_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"v4",
+						"mapbox.streets",
+						"1",
+						"0",
+						"0@2x.png"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve an HTML slippy map",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/v4/mapbox.light/zoomwheel,zoompan,geocoder,share.html?access_token={{mapbox_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"v4",
+						"mapbox.light",
+						"zoomwheel,zoompan,geocoder,share.html"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve features from Mapbox Editor projects",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/v4/mapbox.dc-markers/features.json?access_token={{mapbox_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"v4",
+						"mapbox.dc-markers",
+						"features.json"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve TileJSON metadata",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/v4/mapbox.emerald.json?access_token={{mapbox_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"v4",
+						"mapbox.emerald.json"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a standalone marker",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/v4/marker/pin-s-car+f44@2x.png?access_token={{mapbox_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"v4",
+						"marker",
+						"pin-s-car+f44@2x.png"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		}
+	]
+}

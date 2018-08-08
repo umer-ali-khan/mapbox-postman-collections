@@ -1,0 +1,177 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MapBox - Geocoding",
+		"_postman_id": "79d4cc4e-c240-4214-355b-9a01d1f7d462",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search for places",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"geocoding",
+						"v5",
+						"mapbox.places",
+						"Los%20Angeles.json"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve places near a location",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/geocoding/v5/mapbox.places/-73.989,40.733.json?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"geocoding",
+						"v5",
+						"mapbox.places",
+						"-73.989,40.733.json"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Batch reuests",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/geocoding/v5/mapbox.places-permanent/20001;20009;22209.json?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"geocoding",
+						"v5",
+						"mapbox.places-permanent",
+						"20001;20009;22209.json"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POI categories",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/geocoding/v5/mapbox.places/coffee.json?proximity=-77.032,38.912&limit=10&types=poi&access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"geocoding",
+						"v5",
+						"mapbox.places",
+						"coffee.json"
+					],
+					"query": [
+						{
+							"key": "proximity",
+							"value": "-77.032,38.912",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "limit",
+							"value": "10",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "types",
+							"value": "poi",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

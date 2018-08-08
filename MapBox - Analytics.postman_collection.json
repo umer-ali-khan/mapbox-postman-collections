@@ -1,0 +1,55 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MapBox - Analytics",
+		"_postman_id": "fd798fbb-2e07-6307-a909-6b17cc26040e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieve analytics",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/analytics/v1/tilesets/mapbox/mapbox.streets?period=2016-03-22T00:00:00.000Z,2016-03-24T00:00:00.000Z&access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"analytics",
+						"v1",
+						"tilesets",
+						"mapbox",
+						"mapbox.streets"
+					],
+					"query": [
+						{
+							"key": "period",
+							"value": "2016-03-22T00:00:00.000Z,2016-03-24T00:00:00.000Z",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

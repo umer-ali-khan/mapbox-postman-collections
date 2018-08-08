@@ -1,0 +1,239 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MapBox - Uploads",
+		"_postman_id": "15a1e212-a578-7513-26b0-e41e21388a70",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieve S3 credentials",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"mapbox_s3_url\",jsonData.url);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/uploads/v1/umeralikhan/credentials?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"uploads",
+						"v1",
+						"umeralikhan",
+						"credentials"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Create an upload  (currently giving error)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"mapbox_upload_id\",jsonData.id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/uploads/v1/umeralikhan?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"uploads",
+						"v1",
+						"umeralikhan"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"tileset\": \"umeralikhan.mytileset\",\n  \"url\": \"mapbox://datasets/umeralikhan/{{mapbox_dataset_name}}\",\n  \"name\": \"example-markers\"\n}"
+				},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve upload status",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/uploads/v1/umeralikhan/{{mapbox_upload_id}}?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"uploads",
+						"v1",
+						"umeralikhan",
+						"{{mapbox_upload_id}}"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"tileset\": \"umeralikhan.mytileset\",\n  \"url\": \"mapbox://datasets/umeralikhan/{{mapbox_dataset_name}}\",\n  \"name\": \"example-markers\"\n}"
+				},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve recent upload statuses",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/uploads/v1/umeralikhan?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"uploads",
+						"v1",
+						"umeralikhan"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"tileset\": \"umeralikhan.mytileset\",\n  \"url\": \"mapbox://datasets/umeralikhan/{{mapbox_dataset_name}}\",\n  \"name\": \"example-markers\"\n}"
+				},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		},
+		{
+			"name": "Remove an upload",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/uploads/v1/umeralikhan/{{mapbox_upload_id}}?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"uploads",
+						"v1",
+						"umeralikhan",
+						"{{mapbox_upload_id}}"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"tileset\": \"umeralikhan.mytileset\",\n  \"url\": \"mapbox://datasets/umeralikhan/{{mapbox_dataset_name}}\",\n  \"name\": \"example-markers\"\n}"
+				},
+				"description": "# a 2x tile: this is a 512x512 tile appropriate\n# for high-density displays like Retina displays\n$ curl \"https://api.mapbox.com/v4/mapbox.streets/1/0/0@2x.png?access_token=your-access-token\""
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,48 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MapBox - Tilequery",
+		"_postman_id": "543dbbb7-4b84-489f-2200-b0210077a1ef",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieve features from vector tiles",
+			"request": {
+				"url": {
+					"raw": "https://api.mapbox.com/v4/mapbox.mapbox-streets-v7/tilequery/-122.42901,37.80633.json?access_token={{mapbox_full_access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"v4",
+						"mapbox.mapbox-streets-v7",
+						"tilequery",
+						"-122.42901,37.80633.json"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{mapbox_full_access_token}}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"foo____\",\n  \"description\": \"bar\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
