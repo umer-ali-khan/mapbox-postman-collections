@@ -42,8 +42,8 @@ The Mapbox Maps API supports reading raster tilesets, vector tilesets, and Mapbo
 4. ###  **Retrieve TileJSON metadata** - Returns TileJSON metadata for a tileset. This is an object that describes a map's resources, like tiles, markers, and UTFGrid, as well as its name, description, and centerpoint.
 5. ### **Retrieve a standalone marker** - Request a single marker? image without any background map.
 
-[MAPS End Points - RUN IN POSTMAN](https://documenter.getpostman.com/view/5039671/RWTmvJda)                      
-[MAPS API Endpoints Collection - Download](https://github.com/umer-ali-khan/mapbox-postman-collections/blob/master/MapBox%20-%20Maps.postman_collection.json)
+[BUTTON][MAPS End Points - RUN IN POSTMAN](https://documenter.getpostman.com/view/5039671/RWTmvJda)                      
+[BUTTON][MAPS API Endpoints Collection - Download](https://github.com/umer-ali-khan/mapbox-postman-collections/blob/master/MapBox%20-%20Maps.postman_collection.json)
 
 
 ## Styles
